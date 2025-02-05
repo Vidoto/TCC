@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    padding-top: 0;
+}
+
+header {
+    background-color: #001F33;
+    color: #fff;
+    padding: 20px 20px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-bar {
+    position: relative;
+    display: inline-block;
+}
+
+#searchInput {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 1000px;
+    outline: none;
+}
+
+#searchButton {
+    height: 100%;
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    background-color: #41B6C7;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#searchButton:hover{
+    background-color: #328b99;
+    transition: 0.2s;
+}
+
+.user{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    max-width: 228px;
+}
+
+.profile {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 55px;
+    height: 55px;
+    background-color: #ccc;
+}
+
+.profile img{
+    max-width: 55px;
+    max-height: 55px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+nav {
+    background-color: #001F33;
+    padding: 10px 0px 20px 0px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    flex: 1;
+    margin:0px 70px 0px 70px;
+}
+
+hr{
+    background: none;
+    width: 92%;
+    border: 1px solid #fff;
+}   
+
+main{
+    max-width: 70%;
+    min-height: 70vh;
+    align-content: center;
+    margin: 0 auto;
+    padding-top: 100px;
+    background-color: #F3F3F3;
+}
+
+.receitas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    padding: 40px;
+}
+.receita {
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    max-width: 300px;
+    min-height: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     transition: box-shadow 0.3s ease-in-out;
+}
+
+.receita:hover{
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.receita img {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: 300px !important;
+    margin-top: 10px;
+    border-radius: 5px;
+    object-fit: cover !important;
+    object-position: center;
+    overflow: hidden;
+}
+
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+}
+.vertical-line {
+    border-left: 1px solid #fff;
+    height: 25px;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.none{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        max-width: 100%;
+    }
+
+    main{
+        max-width: 100vw;
+    }
+
+    .receitas-container{
+        padding-top: 80px;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+    }
+
+    .receita{
+        max-width: 280px;
+        height: auto;
+        max-height: 800px;
+    }
+
+    .filters-form{
+        padding-top: 40px;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        margin: 0 auto;
+    }
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.status-pendente {
+    background-color: #ffd700;
+    color: #000;
+}
+
+.status-concluido {
+    background-color: #90EE90;
+    color: #000;
+}
+
+.resposta-farmacia {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.botao-respostas {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.botao-respostas:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos do Modal de Respostas */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    height: 80vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    z-index: 1001;
+}
+
+.close-modal:hover {
+    background-color: #f0f0f0;
+}
+
+.modal-iframe {
+    width: 100%;
+    height: calc(100% - 20px);
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Estilos do Modal de Imagem */
+.image-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-modal-container {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    margin: auto;
+}
+
+.image-modal-content {
+    display: block;
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.close-image-modal {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.close-image-modal:hover {
+    transform: scale(1.1);
+}
+
+.zoom-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.zoom-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.receita-imagem {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.receita-imagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.receita-imagem:hover img {
+    transform: scale(1.02);
+}
+
+/* Animações */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.fade-out {
+    opacity: 1;
+    animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.filters-container {
+    padding: 60px 20px 20px 20px;
+    margin-bottom: 10px;
+}
+
+.filters-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.filter-group input[type="date"],
+.filter-group select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.apply-filter {
+    background-color: #007bff;
+    color: white;
+}
+
+.apply-filter:hover {
+    background-color: #0056b3;
+}
+
+.clear-filter {
+    background-color: #6c757d;
+    color: white;
+}
+
+.clear-filter:hover {
+    background-color: #5a6268;
+}

@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Reset e estilos base */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    padding-top: 0;
+}
+
+/* Navbar container */
+.navbar {
+    width: 100%;
+    position: fixed;
+    box-shadow: 0px 5px 2px rgba(77, 77, 77, 0.384);
+    z-index: 100;
+}
+
+/* Header styles */
+header {
+    background-color: #001F33;
+    color: #fff;
+    padding: 20px 20px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo styles */
+.logo {
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Search bar styles */
+.search-bar {
+    position: relative;
+    display: inline-block;
+}
+
+#searchInput {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 1000px;
+    outline: none;
+    height: 16px;
+}
+
+#searchButton {
+    height: 100%;
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    background-color: #41B6C7;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#searchButton:hover {
+    background-color: #328b99;
+}
+
+/* User section styles */
+.user {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    max-width: 228px;
+}
+
+.profile {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 55px;
+    height: 55px;
+    background-color: #ccc;
+    overflow: hidden;
+}
+
+.profile img {
+    max-width: 55px;
+    max-height: 55px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #001F33;
+    padding: 10px 0px 20px 0px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    margin: 0 70px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #41B6C7;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Menu toggle button (hidden in desktop) */
+.menu-toggle {
+    display: none;
+}
+
+/* Separator line */
+hr {
+    background: none;
+    width: 92%;
+    border: 1px solid #fff;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    body {
+        max-width: 100%;
+    }
+
+    .navbar {
+        max-width: 100vw !important;
+        padding: 0;
+    }
+
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 16px !important;
+        gap: 12px;
+        width: 100vw;
+        z-index: 100;
+        position: relative;
+    }
+
+    /* Logo adjustments */
+    #logo-img {
+        display: none;
+    }
+
+    #logo-txt {
+        padding: 5px 0 0 0;
+        margin-left: -70%;
+    }
+
+    /* Search bar adjustments */
+    .search-bar {
+        order: 2;
+        width: 90%;
+        margin: 8px 0 -10px 0;
+        display: flex;
+        align-items: stretch;
+    }
+
+    #searchInput {
+        width: calc(100% - 50px);
+        height: 14px !important;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 14px;
+        max-width: 85vw;
+    }
+
+    #searchButton {
+        width: 60px;
+        height: 100%;
+        position: relative;
+        margin-left: -50px;
+        margin-top: 5%;
+        background-color: transparent !important;
+        color: #000;
+    }
+
+    /* User section adjustments */
+    .user {
+        order: 1;
+        margin: 0 2% 0 auto;
+        align-items: center;
+    }
+
+    .profile {
+        width: 45px;
+        height: 45px;
+    }
+
+    .profile img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .nome_usuario {
+        font-size: 12px;
+        text-align: right;
+    }
+
+    /* Navigation menu adjustments */
+    .nav-items {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100vw;
+        padding: 20px 0;
+        background-color: #001F33;
+        opacity: 0;
+        transform: translateY(-50px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        position: absolute;
+        top: 100%;
+        z-index: 99;
+    }
+
+    .nav-items.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    nav a {
+        opacity: 0;
+        transform: translateX(-30px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .nav-items.active a {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* Staggered animation for menu items */
+    .nav-items.active a:nth-child(1) { transition-delay: 0.1s; }
+    .nav-items.active a:nth-child(2) { transition-delay: 0.2s; }
+    .nav-items.active a:nth-child(3) { transition-delay: 0.3s; }
+    .nav-items.active a:nth-child(4) { transition-delay: 0.4s; }
+
+    .menu-toggle {
+        display: block;
+        background: transparent;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        padding: 0px;
+        position: absolute;
+        right: 13.5%;
+        top: 70%;
+        scale: 1.8;
+        transform: translateY(-50%);
+        z-index: 101;
+    }
+    
+    /* Hamburger Icon */
+    .menu-toggle .hamburger {
+        width: 24px;
+        height: 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .menu-toggle .hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    /* Active state for hamburger animation */
+    .menu-toggle.active .hamburger span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .menu-toggle.active .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active .hamburger span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+
+    .menu-toggle:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    nav a {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .search-bar {
+        margin: 4px 0 -10px 0;
+    }
+
+    #searchInput {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    #searchButton {
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .profile {
+        width: 40px;
+        height: 40px;
+    }
+
+    .profile img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nome_usuario {
+        font-size: 11px;
+    }
+
+    .custom-file-upload {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+
+    .icon img {
+        width: 25px;
+        height: 25px;
+    }
+}

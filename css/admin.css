@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #001F33;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.sidebar h1 {
+    margin: 0;
+    font-size: 18px;
+}
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px 0;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.sidebar a:hover {
+    background-color: #495057;
+    border-radius: 5px;
+}
+.main {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto;
+}
+.main .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.main .header h1 {
+    margin: 0;
+}
+.main .header .logout {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 32px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#logo{
+    width: 70px;
+}
+
+h2{
+    font-size: 20px;
+}
+
+.table-container {
+    width: 100%; /* Ajusta para o tamanho do contêiner pai */
+    overflow-x: auto; /* Ativa a barra de rolagem horizontal */
+    border: 1px solid #ccc; /* Opcional, para borda ao redor */
+    margin: 10px 0; /* Espaçamento entre elementos */
+}
+
+table {
+    width: 100%; /* Garante que a tabela use o espaço necessário */
+    border-collapse: collapse; /* Remove espaços entre células */
+}
+
+table th, table td {
+    text-align: left; /* Alinha o conteúdo à esquerda */
+    padding: 8px; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Borda entre células */
+}
+
+table th {
+    background-color: #f4f4f4; /* Cor de fundo para cabeçalhos */
+}
+
+.row {
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    display: flex; /* Ativa o flexbox */
+    flex-wrap: wrap; /* Permite quebra para dispositivos menores */
+    gap: 16px; /* Espaçamento entre os elementos */
+}
+
+.col-xl-9, .col-xl-3 {
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.col-xl-9 {
+    flex: 3 1 75%; /* Largura proporcional */
+    padding: 0;
+}
+
+.col-xl-3 {
+    flex: 1 1 25%; /* Largura proporcional */
+    padding: 0;
+}
+
+.card {
+    border: 1px solid #ddd; /* Estiliza as bordas */
+    border-radius: 8px; /* Cantos arredondados */
+    overflow: hidden; /* Previne estouros */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}

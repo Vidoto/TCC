@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    padding-top: 0;
+}
+
+.info {
+    position: relative;
+    max-width: 100%;
+    padding: 60px 30px 20px 30px;
+    display: flex;
+    align-items: center;
+    height: 600px;
+}
+
+.info::before {
+    margin-top: 80px;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('https://futurodasaude.com.br/wp-content/uploads/2021/08/AdobeStock_139538909.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px) brightness(70%);
+    z-index: -1;
+}
+
+.info h1 {
+    width: 100%;
+    font-size: 36px;
+    font-style: italic;
+    color: aliceblue;
+}
+
+.info p {
+    color: aliceblue;
+    font-size: 18px;
+    width: 100%;
+}
+
+.sobre-nos, .como-estamos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.sobre-nos {
+    background: #ffffff;
+}
+
+.como-estamos {
+    background: #e9e9e9;
+}
+
+.sobre-nos h2,
+.como-estamos h2 {
+    font-size: 28px;
+    color: #001F33;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sobre-texto, .como-texto {
+    padding: 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sobre-nos p,
+.como-estamos p {
+    font-size: 16px;
+    color: #333;
+}
+
+.sobre-imagem img,
+.como-imagem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border-style: ridge;
+    box-shadow: 5px 5px 0px #52BDBB;
+    margin-top: 20px;
+}
+
+.como-imagem img {
+    box-shadow: -5px 5px 0px #74D1AB;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.icons {
+    flex-wrap: wrap;
+}
+
+.icon {
+    padding: 10px;
+}
+
+.icon img {
+    width: 25px;
+    height: 25px;
+}
+
+.vertical-line {
+    height: 20px;
+}
+
+@media (min-width: 768px) {
+    .info {
+        height: 800px;
+        padding: 60px 60px 20px 60px;
+    }
+
+    .info h1 {
+        font-size: 64px;
+        width: 90%;
+    }
+
+    .info p {
+        font-size: 28px;
+        width: 70%;
+    }
+
+    .sobre-nos, .como-estamos {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 60px 90px;
+    }
+
+    .sobre-texto {
+        padding: 0px 160px 0px 40px;
+        text-align: left;
+    }
+
+    .como-texto {
+        padding: 0px 30px 0px 100px;
+        text-align: left;
+    }
+
+    .sobre-nos h2,
+    .como-estamos h2 {
+        font-size: 32px;
+        text-align: left;
+    }
+
+    .sobre-nos p,
+    .como-estamos p {
+        font-size: 20px;
+    }
+
+    .sobre-imagem img,
+    .como-imagem img {
+        max-width: 400px;
+    }
+
+    #map {
+        height: 800px;
+    }
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+}
+.vertical-line {
+    border-left: 1px solid #fff;
+    height: 25px;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

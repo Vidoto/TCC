@@ -1,0 +1,578 @@
+/* Reset básico e estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* Header */
+header {
+    background-color: #001F33;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #bfdbfe;
+}
+
+/* Main content */
+main {
+    margin-top: 2rem;
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+    filter: blur(2px);
+    padding-bottom: 40px;
+}
+
+.slide-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 20;
+    width: 50%; /* Reduzido de 80% para 50% */
+    background-color: #00000056;
+    padding: 3rem; /* Adicionado padding interno */
+    border-radius: 10px; /* Opcional: adiciona cantos arredondados */
+}
+
+.slide-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.slide-text p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+
+/* botões */
+.slide-buttons {
+    margin-top: 2rem; /* Espaço acima dos botões */
+    display: flex;
+    gap: 1rem; /* Espaço entre os botões */
+    justify-content: center;
+}
+
+.slide-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #52BDBB; /* Azul */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #419694;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: #419694;
+    transform: translateY(-2px);
+}
+
+/* Adicione isso na sua media query para responsividade */
+@media (max-width: 768px) {
+    .slide-buttons {
+        margin-top: 2rem; /* Espaço acima dos botões */
+        display: flex;
+        gap: 1rem; /* Espaço entre os botões */
+        justify-content: center;
+    }
+    
+    .slide-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Cards */
+
+.card {
+    background: #ffffff;
+    padding: 2rem 1.8rem;
+    border-radius: 16px;
+    box-shadow: 
+        5px 5px 15px rgba(0, 0, 0, 0.08),
+        -5px -5px 15px rgba(221, 221, 221, 0.8);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(116, 209, 171, 0.1);
+}
+
+/* Efeito de hover para cards */
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #5b93b9;
+    cursor: pointer;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(116, 209, 171, 0.1) 0%,
+        rgba(116, 209, 171, 0) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card i, .card h2, .card p {
+    position: relative;
+    z-index: 2;
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1970aa;
+    transition: color 0.3s ease;
+    line-height: 1.4;
+}
+
+.card:hover h2 {
+    color: #5b93b9 !important;
+}
+
+.card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #1970aa;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-5px); }
+    60% { transform: translateY(0); }
+    100% { transform: translateY(-3px); }
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.card:hover::before {
+    opacity: 0.9;
+}
+
+.card i, .card h2, .card p {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.card h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card:hover i, .card:hover h2, .card:hover p {
+    color: #5b93b9;
+}
+
+/*statistics*/
+.statistics-section {
+    padding: 90px 50px 90px 50px;
+    background: linear-gradient(to right, #41B6C7, #51baae);
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.statistics-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.statistics-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.statistics-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    color: white;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    width: 300px; /* Aumentado tamanho inicial */
+    height: 100px; /* Aumentado tamanho inicial */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.stat-item:hover {
+    transform: scale(1.1); /* Aumenta o tamanho no hover */
+}
+
+.stat-icon {
+    width: 3rem; /* Aumentado tamanho do ícone */
+    height: 3rem;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover .stat-icon {
+    transform: scale(1.3) rotate(10deg); /* Aumenta ainda mais o ícone no hover */
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+.stat-number {
+    font-size: 2.5rem; /* Aumentado tamanho do número */
+    font-weight: 700;
+    line-height: 1.3;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.stat-item:hover .stat-number {
+    transform: scale(1.2); /* Maior no hover */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.stat-label {
+    font-size: 1rem; /* Aumentado tamanho da label */
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover .stat-label {
+    opacity: 1;
+    transform: translateY(2px);
+}
+
+.stat-divider {
+    height: 3rem;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover + .stat-divider,
+.stat-divider:hover {
+    height: 3.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+@media (max-width: 768px) {
+    .statistics-wrapper {
+        gap: 2rem;
+        flex-direction: column;
+    }
+
+    .stat-divider {
+        display: none;
+    }
+
+    .stat-item {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .container-prob{
+        display: flex;
+        flex-direction: column !important;
+        padding: 24px;
+    }
+
+    .prob{
+        max-height: 300px;
+    }
+
+}
+
+.container-prob{
+    position: center;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    gap: 20px;
+    color: #000;
+
+}
+
+.prob {
+    display: flex;
+    flex: 1;
+    height: 500px;
+    position: relative;
+    flex-direction: column;
+    border-radius: 12px;
+    background-color: #dddddd;
+    overflow: hidden;
+    transition: 0.1s;
+}
+
+.prob:hover{
+    cursor: pointer;
+    transform: scale(1.08);
+    transition: 0.1s;
+}
+
+.prob img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+    filter: brightness(0.8);
+}
+
+.textop {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white; /* Alterado para branco para melhor visibilidade */
+    font-size: 16px;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    padding: 15px; /* Adicionado padding */
+    margin: 0 auto; /* Adicionado */
+    background-color: #00000073;
+    transition: 0.25s;
+    height: 15%;
+}
+
+.textop:hover{
+    height: 100%;
+    transition: 0.25s;
+    font-size: 18px;
+}
+
+section > .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+
+    .slide-text{
+        width: 90%;
+    }
+
+    .slide-text h2 {
+        font-size: 2rem;
+    }
+
+    .slide-text p {
+        font-size: 1.2rem;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    header .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    .icon img {
+        width: 25px;
+        height: 25px;
+    }
+
+}
+
+.feedback-form {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.feedback-form h2 {
+    color: #001F33;
+    margin-bottom: 1rem;
+}
+
+.feedback-form form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+}
+
+.feedback-form button {
+    background-color: #52BDBB;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-form button:hover {
+    background-color: #419694;
+}
+
+@media (max-width: 768px) {
+    .feedback-form {
+        padding: 1rem;
+    }
+}
+
+.sucesso {
+    background-color: #DFF2BF;
+    color: #4F8A10;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}

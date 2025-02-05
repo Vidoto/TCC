@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f7fa;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    body {
+        max-width: 100%;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 100vw;
+        z-index: 100;
+        position: relative;
+    }
+
+    header img{
+        margin-left: -15px;
+    }
+
+    .nav-items {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100vw;
+        background-color: #001F33;
+    }
+
+    .nav-items.active {
+        display: flex;
+    }
+
+    .toggle-btn {
+        display: inline-block !important;
+        position: absolute;
+        background: none;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        top: 3px;
+        right: 24px;
+        color: white;
+        z-index: 101;
+    }
+
+    nav {
+        display: flex;
+        width: 100vw;
+        background-color: #001F33;
+        padding: 0px 10px;
+    }
+
+    nav a {
+        font-size: 18px;
+        text-align: center;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+    }
+
+    /* Estiliza os links da navegação quando o menu está ativo */
+    .nav-items.active a {
+        color: #f8f8f8;
+    }
+}
+
+/* Estilos para dispositivos ainda menores */
+@media (max-width: 480px) {
+
+    #searchInput {
+        width: calc(100% - 50px);
+        padding: 8px;
+    }
+
+    #submit {
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .custom-file-upload {
+        font-size: 16px;
+        padding: 6px 10px;
+    }
+
+    .icon img {
+        width: 25px;
+        height: 25px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .section-header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        gap: 10px;
+    }
+}
+
+/* Mantendo os estilos originais da navbar */
+header {
+    background-color: #001F33;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;position: fixed;
+    width: 100vw;
+    z-index: 100;
+    box-shadow: 0px 5px 2px rgba(77, 77, 77, 0.384);
+}
+
+.logo {
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+nav {
+    background-color: #001F33;
+    padding: 12px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    flex: 1;
+    margin: 0px 50px 0px 50px;
+    transition: 0.2s;
+}
+
+.toggle-btn {
+    display: none;
+}
+
+nav a:hover {
+    color: #bebebe;
+    transition: 0.2s;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #001F33 0%, #004d80 100%);
+    padding: 120px 20px;
+    color: white;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+/* Stats Cards */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card i {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #4dc6ff;
+}
+
+.stat-card h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    color: #4dc6ff;
+}
+
+/* Container Principal */
+.main-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Seção de Receitas */
+.prescriptions-section {
+    margin-bottom: 60px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    color: #001F33;
+    font-weight: 700;
+}
+
+.filters {
+    display: flex;
+    gap: 15px;
+}
+
+.filters a{
+    text-decoration: none;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e9ecef;
+    color: #495057;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+    background-color: #001F33;
+    color: white;
+}
+
+/* Grid de Receitas */
+.prescriptions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.prescription-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prescription-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    padding: 15px;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ffd43b;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.date {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.prescription-content {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.prescription-info {
+    flex: 1;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.user-info i {
+    color: #001F33;
+    font-size: 1.2rem;
+}
+
+.prescription-info h3 {
+    color: #001F33;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #6c757d;
+}
+
+.quantity i {
+    color: #001F33;
+}
+
+.prescription-image-container {
+    position: relative;
+    width: 120px;
+    height: 160px;
+}
+
+.prescription-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.zoom-hint {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prescription-actions {
+    padding: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.action-btn:hover{
+    filter: brightness(0.8);
+}
+
+.action-btn.available {
+    background-color: #1cbd87;
+    color: white;
+}
+
+.action-btn.unavailable {
+    background-color: rgb(240, 88, 77);
+}
+
+.response-input{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    min-height: 80px;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #e4e4e4;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+.message-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    max-width: 300px;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.status-indicator.pendente {
+    background-color: #ffc107;
+}
+.status-indicator.concluido {
+    background-color: #28a745;
+}
+.status-indicator.indisponivel {
+    background-color: #dc3545;
+}

@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    padding-top: 0;
+}
+
+.user-info {
+    max-width: 70%;
+    max-height: 100%;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    background-color: #F3F3F3;
+    padding: 150px 20px 400px 20px;
+}
+
+.left-side {
+    width: 28%;
+    min-height: 80vh;
+    height: 100vh;
+    padding-top: 12px;
+    text-align: center;
+    border-right: 1px solid #c2c2c2;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-side {
+    width: 72%;
+    min-height: 80vh;
+    height: 100vh;
+    padding: 12px 50px 24px 50px;
+}
+
+@media (max-width: 768px) {
+    body {
+        max-width: 100%;
+    }
+
+    .user-info {
+        max-width: 100%;
+        flex-direction: column;
+        padding: 200px 10px;
+    }
+
+    .right-side {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        padding: 12px 0;
+    }
+
+    .left-side {
+        width: 100%;
+        height: 10px !important;
+        border-right: none;
+        padding: 12px 0;
+        border-bottom: 1px solid #c2c2c2;
+        margin-bottom: 20px;
+        max-height: 10px !important;
+    }
+
+    #profile-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .form-input, .custom-file-upload, #submit {
+        width: 100%;
+        max-width: none;
+    }
+
+    .roll-info {
+        flex-direction: column;
+    }
+
+    .roll-info-input {
+        width: 100%;
+    }
+
+    .user-stat {
+        height: auto;
+        max-height: none;
+    }
+
+    #chartContainer {
+        height: 250px;
+    }
+
+    .icons {
+        flex-wrap: wrap;
+    }
+
+    .icon {
+        padding: 10px;
+    }
+
+    .vertical-line {
+        display: none;
+    }
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#profile-img{
+    border-radius: 50%;
+    padding: 24px;
+    width: 140px;
+    height: 132px;
+}
+
+.form-input{
+    height: 26px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 5px;
+}
+
+label{
+    margin: 24px 0px 5px 0px;
+}
+
+.roll-info{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 100%;
+}
+
+.roll-info-input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.roll-info-input input{
+    width: auto;
+}
+
+.roll-info-input label{
+    margin-bottom: 5px;
+}
+
+#submit {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    height: 40px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+#submit:hover{
+    background-color: #e0e0e0;
+}
+
+.atualizar-button, .filtrar-button{
+    margin-top: 16px;
+    height: 40px;
+}
+
+/* CSS */
+.input-file {
+    position: relative;
+    display: inline-block;
+    width: 95%;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: rgb(3, 3, 3);
+    background-color: #c2c2c2;
+    border: 2px solid #2b2b2b;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    overflow: hidden;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0px 0px 20px 0px;
+}
+
+/* Remover o estilo padrão do input */
+.input-file::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.input-file::before {
+    content: 'Escolher Foto';
+    display: inline-block;
+    color: white;
+    font-size: 16px;
+}
+
+.input-file:hover {
+    background-color: #f0f0f0;
+}
+
+.input-file:active {
+    background-color: #3e8e41;
+    border-color: #3e8e41;
+}
+
+.custom-file-upload {
+    max-width: 100%;
+    height: 40px;
+    max-height: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.custom-file-upload input[type="file"] {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-file-upload:hover {
+    background-color: #e0e0e0;
+}
+
+.user-stat{
+    height: 320px;
+    max-height: 320px;
+    margin-top: 24px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+}
+.vertical-line {
+    border-left: 1px solid #fff;
+    height: 25px;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.mensagem {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sucesso {
+    background-color: #DFF2BF;
+    color: #4F8A10;
+}
+
+.erro {
+    background-color: #F2DEDE;
+    color: #D8000C;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Input File Styling */
+.input-file {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 8px 0 20px 0;
+    position: relative;
+}
+
+.input-file:hover {
+    border-color: #0d6efd;
+    background-color: #e9ecef;
+}
+
+.input-file::before {
+    content: 'Escolher Foto';
+    color: #0d6efd;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.input-file::after {
+    content: '📸';
+    margin-left: 8px;
+    font-size: 1.2rem;
+}
+
+/* Date Input Styling */
+input[type="date"] {
+    max-width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #495057;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    margin: 8px 0;
+}
+
+input[type="date"]:hover {
+    border-color: #0d6efd;
+}
+
+input[type="date"]:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+/* Button Styling */
+.atualizar-button, .filtrar-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.atualizar-button {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.filtrar-button {
+    background-color: #6c757d;
+    color: white;
+    margin-left: 10px;
+}
+
+.atualizar-button:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filtrar-button:hover {
+    background-color: #5c636a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Layout Improvements */
+form {
+    gap: 4.5px;
+}
+
+label {
+    color: #495057;
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin: 16px 0 4px 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .atualizar-button, .filtrar-button {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    input[type="date"] {
+        font-size: 16px; /* Prevents zoom on mobile */
+    }
+}
